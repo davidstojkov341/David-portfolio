@@ -1,0 +1,770 @@
+﻿/* ===== Global reset ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+    opacity: 0;
+    transform: translateY(10px);
+    filter: blur(5px);
+    transition: all 0.6s ease;
+}
+
+
+    body.loaded {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+
+
+#matrix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    z-index: -1;
+}
+
+/* ===== Header ===== */
+.main_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 25px 30px;
+    color: white;
+    position: relative;
+    font-size: 18px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+
+
+.jazici_menu {
+    position: relative;
+    display: inline-block;
+    font-size: 23px;
+    margin-top: 28px;
+}
+
+.jazici_button {
+    color: yellow;
+    cursor: pointer;
+    font-size: 16px; /* 🔽 намалено */
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.jazici_lista {
+    display: none;
+    position: absolute;
+    background: black;
+    min-width: 150px;
+}
+
+    .jazici_lista a {
+        display: block;
+        padding: 8px;
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+.jazici_menu:hover .jazici_lista {
+    display: block;
+}
+
+
+
+
+
+/* ===== Logo text ===== */
+.logo_tekst {
+    font-weight: 600;
+    color: white;
+    font-size: 23px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ===== Navigation buttons ===== */
+.kopcinja_menu {
+    display: flex;
+    gap: 3px;
+    margin-top: 22px;
+    font-size: 23px;
+}
+
+    .kopcinja_menu a {
+        color: yellow;
+        text-decoration: none;
+        padding: 8px 11px;
+        position: relative;
+    }
+
+
+
+        /* hover */
+        .kopcinja_menu a:hover::after {
+            width: 100%;
+        }
+
+        /* активен таб */
+        .kopcinja_menu a.active::after {
+            width: 100%;
+        }
+
+.fa-instagram {
+    color: yellow;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.fa-facebook-f {
+    color: yellow;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+
+
+/* ===== Hamburger ===== */
+.hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+}
+
+
+.box_pocetna {
+    background-color: rgba(0,0,0,0.65);
+    backdrop-filter: blur(10px);
+    width: 90%;
+    max-width: 900px;
+    margin: 100px auto; /* центар */
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(255,255,255,0.1);
+}
+
+    .box_pocetna img {
+        border-radius: 30px;
+        border: 2px solid yellow;
+        box-shadow: 0 0 15px rgba(255,255,0,0.4);
+        transition: transform 0.3s ease;
+    }
+
+        .box_pocetna img:hover {
+            transform: scale(1.03);
+        }
+
+
+.box_logo_tekst {
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+#typing_text {
+    color: white;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    font-size: 32px;
+    font-family: monospace;
+    border-right: 3px solid white;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    white-space: normal; /* дозволува да се крши во редови */
+    word-wrap: break-word;
+    text-align: center;
+    overflow: hidden;
+    font-family: monospace;
+}
+
+
+.bg_kanji {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 220px;
+    color: rgba(255,255,255,0.05);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.tab_content {
+    opacity: 0;
+    transform: translateY(15px);
+    transition: all 1.0s ease;
+    height: 0;
+    overflow: hidden;
+}
+
+    .tab_content.active {
+        opacity: 1;
+        transform: translateY(0);
+        height: auto;
+    }
+
+/* TAB BUTTONS */
+.kopcinja_menu a {
+    color: yellow;
+    text-decoration: none;
+    padding: 8px 12px;
+    position: relative;
+}
+
+    /* underline animation */
+    .kopcinja_menu a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -3px;
+        width: 0%;
+        height: 2px;
+        background: yellow;
+        transition: width 2s ease;
+    }
+
+    /* hover */
+    .kopcinja_menu a:hover::after {
+        width: 100%;
+    }
+
+    /* active */
+    .kopcinja_menu a.active::after {
+        width: 100%;
+    }
+
+
+.about_container {
+    display: flex;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 100px auto 40px auto;
+    color: white;
+}
+
+/* LEFT */
+.about_left {
+    flex: 2;
+}
+
+    .about_left h2 {
+        color: yellow;
+        margin-bottom: 10px;
+    }
+
+    .about_left p {
+        margin-bottom: 30px;
+        line-height: 1.6;
+    }
+
+/* RIGHT */
+.about_right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.about_box {
+    background: rgba(0,0,0,0.7);
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+    .about_box h3 {
+        color: yellow;
+        margin-bottom: 10px;
+    }
+
+    .about_box ul {
+        list-style: none;
+    }
+
+    .about_box li {
+        margin-bottom: 5px;
+    }
+
+
+.contact_container {
+    display: flex;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 100px auto;
+    color: white;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.6s ease forwards;
+}
+
+/* ЛЕВО */
+.contact_left iframe {
+    width: 100%;
+    height: 300px;
+    border: none;
+    border-radius: 10px;
+}
+
+/* ДЕСНО */
+.contact_right {
+    flex: 1;
+}
+
+    .contact_right h2 {
+        color: yellow;
+        margin-bottom: 15px;
+    }
+
+    .contact_right p {
+        margin-bottom: 10px;
+    }
+
+/* SOCIAL */
+.socials {
+    margin: 15px 0;
+}
+
+    .socials i {
+        font-size: 22px;
+        margin-right: 10px;
+        color: yellow;
+        cursor: pointer;
+    }
+
+/* FORM */
+.contact_form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+    .contact_form input,
+    .contact_form textarea {
+        padding: 10px;
+        background: rgba(0,0,0,0.6);
+        border: 1px solid rgba(255,255,255,0.2);
+        color: white;
+        border-radius: 5px;
+    }
+
+    .contact_form textarea {
+        height: 100px;
+        resize: none;
+    }
+
+    .contact_form button {
+        background: yellow;
+        color: black;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: 0.3s;
+    }
+
+        .contact_form button:hover {
+            background: white;
+        }
+
+
+.experience_title {
+    text-align: center;
+    color: yellow;
+    margin-top: 100px;
+}
+
+/* CONTAINER */
+.experience_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* 🔥 ОВА ГО РЕШАВА */
+    gap: 25px;
+    max-width: 1100px;
+    margin: 40px auto;
+}
+
+/* CARD */
+.exp_card {
+    background: rgba(0,0,0,0.65);
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 15px;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: 0.3s;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.6s ease forwards;
+    width: 250px;
+}
+
+    .exp_card:nth-child(2) {
+        animation-delay: 0.2s;
+    }
+
+    .exp_card:nth-child(3) {
+        animation-delay: 0.4s;
+    }
+
+    .exp_card:nth-child(4) {
+        animation-delay: 0.6s;
+    }
+
+    /* IMAGE */
+    .exp_card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+    }
+
+    /* TEXT */
+    .exp_card h3 {
+        color: yellow;
+        margin: 10px 0;
+    }
+
+    .exp_card p {
+        padding: 0 10px;
+        font-size: 14px;
+    }
+
+    /* HOVER EFFECT */
+    .exp_card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0 15px rgba(255,255,0,0.3);
+    }
+
+
+
+
+.karate_info {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: rgba(0,0,0,0.65);
+    border-radius: 10px;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 20px rgba(255,255,255,0.1);
+    text-align: center;
+}
+
+    .karate_info h2 {
+        color: yellow;
+        margin-bottom: 15px;
+    }
+
+    .karate_info p {
+        line-height: 1.6;
+        font-size: 16px;
+    }
+
+
+.gallery_title {
+    text-align: center;
+    color: yellow;
+    margin-top: 100px;
+}
+
+.art_frame {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 25px;
+    background: rgba(0,0,0,0.6);
+    border: 2px solid yellow;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    /* fancy рамка */
+    clip-path: polygon(5% 0%, 95% 0%, 100% 20%, 95% 100%, 5% 100%, 0% 80%);
+}
+
+    /* СИТЕ СЛИКИ */
+    .art_frame img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 10px;
+        border: 2px solid white;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+
+        /* POSITIONS (хаос = стил 😎) */
+
+
+        /* HOVER */
+        /* RANDOM ROTATION */
+        .art_frame img:nth-child(odd) {
+            transform: rotate(-5deg);
+        }
+
+        .art_frame img:nth-child(even) {
+            transform: rotate(5deg);
+        }
+
+        /* HOVER */
+        .art_frame img:hover {
+            transform: scale(1.1) rotate(0deg);
+            z-index: 2;
+            box-shadow: 0 0 20px yellow;
+        }
+
+.gallery_text {
+    max-width: 800px;
+    margin: 20px auto 40px auto;
+    text-align: center;
+    color: white;
+    font-size: 17px;
+    line-height: 1.7;
+    padding: 15px 20px;
+    background: rgba(0,0,0,0.6);
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 15px rgba(255,255,255,0.1);
+}
+
+
+
+.cv_button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 20px;
+    background: yellow;
+    color: black;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+    .cv_button:hover {
+        background: white;
+        transform: scale(1.05);
+    }
+
+
+
+
+
+/* ===== Responsive (Mobile) ===== */
+@media (max-width: 1024px) {
+
+    .main_header {
+        flex-direction: row; /* наместо ред → колона */
+        justify-content: space-between;
+        gap: 10px;
+        backdrop-filter: blur(5px);
+        flex-wrap: wrap;
+    }
+
+        .main_header > div {
+            align-items: center;
+        }
+
+
+
+    .jazici_menu {
+        margin-top: 19px;
+        font-size: 16px;
+    }
+
+    .logo_tekst {
+        font-size: 14px;
+        text-align: center;
+        flex: 1;
+    }
+
+    .jazici {
+        font-size: 15px;
+    }
+    .jazici_button{
+        font-size: 13px;
+    }
+
+
+
+
+    .kopcinja_menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        background-color: black;
+        text-align: center;
+
+        font-size: 16px;
+        gap: 5px;
+    }
+
+        .kopcinja_menu a {
+            padding: 15px;
+            border-top: 1px solid #333;
+        }
+
+    .hamburger {
+        display: block;
+        align-self: flex-end;
+        margin-right: 10px;
+        margin-left: -20px;
+    }
+
+    select {
+        margin-right: 0 !important;
+    }
+
+
+    .about_container {
+        flex-direction: column;
+        padding: 0 15px;
+    }
+
+
+    .contact_container {
+        flex-direction: column;
+        padding: 0 15px;
+    }
+
+    tab_content {
+        opacity: 0;
+        transform: translateY(15px);
+        transition: all 1.0s ease;
+        height: 0;
+        overflow: hidden;
+    }
+
+    .tab_content.active {
+        opacity: 1;
+        transform: translateY(0);
+        height: auto;
+    }
+
+
+    .gallery_text {
+        font-size: 15px;
+        padding: 12px;
+        margin: 15px;
+    }
+
+    .art_frame {
+        grid-template-columns: repeat(2, 1fr); /* 2 во ред */
+        gap: 10px;
+    }
+
+        .art_frame img {
+            height: 120px;
+            transform: none !important; /* тргни rotate */
+        }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+.kontakt_icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+    .kontakt_icons a {
+        font-size: 18px;
+        color: yellow
+    }
+
+.copy {
+    margin-top: 10px;
+}
+
+
+
+
+
+
+
+#lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+    #lightbox img {
+        max-width: 90%;
+        max-height: 90%;
+        border-radius: 10px;
+        box-shadow: 0 0 25px rgba(255,255,255,0.2);
+        animation: zoomIn 0.3s ease;
+    }
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

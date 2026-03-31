@@ -1,0 +1,344 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="masum_stil.css">
+    <script src="masum_javascript.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <title>Портфолио Давид Стојков</title>
+    <link rel="icon" type="image/png"  href="logo.png" >
+
+</head>
+<body class="loading">
+    <canvas id="matrix"></canvas>
+    <div class="bg_kanji">武</div>
+    <header class="main_header">
+        <div style="display:flex; justify-content:space-between; width:100%;">
+            <div class="hamburger" onclick="toggleMenu()">
+                ☰
+            </div>
+
+            <div class="jazici_menu">
+
+                <div class="jazici_button">
+                    <img src="makedonija.png" width="25"> MK ▾
+                </div>
+
+                <div class="jazici_lista">
+                    <a href="masum_portofilio_en.html#"><img src="england.png" width="20"> EN </a>
+                    <a href="masum_portofilio_sq.html#"><img src="albania.png" width="20"> SQ </a>
+                    <a href="masum_portofilio_de.html#"><img src="germany.png" width="20"> DE </a>
+                </div>
+
+
+            </div>
+            <div style="margin-top:25px">
+                <span class="logo_tekst">Портфолио Давид Стојков</span>
+            </div>
+
+            <div>
+                <nav class="kopcinja_menu" id="kopcinja_menu">
+                    <a href="#" class="active" onclick="openPregled('tab1',this)">Дома</a>
+                    <a href="#" onclick="openPregled('about_c', this)">За мене</a>
+                    <a href="#" onclick="openPregled('godina1', this)">Искуства</a>
+                    <a href="#" onclick="openPregled('galerija', this)">Галерија</a>
+                    <a href="#" onclick="openPregled('raspored1', this)">Контакт</a>
+                    <a href="https://www.facebook.com/profile.php?id=61580486207090" target="_blank" class="fa-brands fa-facebook"><b></b></a>
+                    <a href="https://www.instagram.com/stojkow_d/" target="_blank" class="fa-brands fa-instagram"></a>
+                </nav>
+            </div>
+
+        </div>
+
+
+
+
+
+    </header>
+
+
+
+    <div id="tab1" class="tab_content active">
+
+        <section class="box_pocetna">
+            <h1 class="box_logo_tekst">Добре дојдовте!</h1>
+            <h1 id="typing_text"></h1>
+            <p style=" " align="center"><img src="David.jpg" width="400" , height="300" style="border-radius:90px; border-style: solid; border-color: yellow;" /></p>
+
+
+            <div class="kontakt_icons">
+
+                <a href="tel:+38972611869">
+                    <i class="fa-solid fa-phone"></i> +389 72 611 869
+                </a>
+
+                <a href="mailto:davidstojkov341@email.com">
+                    <i class="fa-solid fa-envelope"></i> davidstojkov341@gmail.com
+                </a>
+
+                <p class="copy">
+                    <i class="fa-regular fa-copyright"></i> 2026 Давид Стојков
+                </p>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <div id="about_c" class="tab_content" style="color:white">
+
+        <div class="about_container">
+
+            <!-- ЛЕВА СТРАНА -->
+            <div class="about_left">
+
+                <h2>Нешто повеќе за мене</h2>
+                <p>
+                    Јас сум Давид Стојков, роден во средината на 2008 година.
+                    Уште од мали нозе се занимавам со спорт и на 10-годишна возраст
+                    фудбалските терени ги заменив со татами, а дресот со кимоно.
+                    Оттогаш до денес желбата за карате како боречка вештина е составен дел од моето секојдневие.
+
+
+                </p>
+
+                <h2>Погледи кон иднина</h2>
+                <p>
+                    Во иднина се гледам како уште подобар тренер, со цел знаењето да го пренесам на помладите генерации.
+                </p>
+
+                <a href="cv_david_stojkov.pdf.docx" download class="cv_button">
+                    📄 Преземи CV
+                </a>
+
+
+
+            </div>
+
+            <!-- ДЕСНА СТРАНА -->
+            <div class="about_right">
+
+                <div class="about_box">
+                    <h3>Карактеристики</h3>
+                    <ul>
+                        <li>Дисциплиниран</li>
+                        <li>Упорен</li>
+                        <li>Лидер</li>
+                        <li>Посветен</li>
+                        <li>Лојален</li>
+                        <li>Учитив</li>
+                        <li>Абициозен</li>
+                        <li>Тимски играч</li>
+                    </ul>
+                </div>
+
+                <div class="about_box">
+                    <h3>Способности</h3>
+                    <ul>
+                        <li>Карате тренинг</li>
+                        <li>Работа со деца</li>
+                        <li>Физичка подготовка</li>
+                    </ul>
+                </div>
+
+                <div class="about_box">
+                    <h3>Јазици</h3>
+                    <ul>
+                        <li>Македонски</li>
+                        <li>Англиски</li>
+                        <li>Германски</li>
+                        <li>Хрватски</li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+
+
+    <div id="godina1" class="tab_content" style="color:white">
+
+        <h1 class="experience_title"> Искуства</h1>
+
+        <div class="karate_info">
+            <h2>Карате како вештина</h2>
+            <p>
+                Карате (Јап. 空手 - празна рака) е јапонска боречка вештина која ги користи сите делови на телото
+                со цел за самоодбрана. Зборот на јапонски значи празна рака. Се појавува во 16 век на островот Окинава.
+                Каратето нуди сеопфатни придобивки за физичкото и менталното здравје, подобрувајќи
+                ја дисциплината, самодовербата, физичката подготвеност и концентрацијата. Тоа е ефикасна
+                вештина за самоодбрана, развива флексибилност, сила и координација, а истовремено учи на почит,
+                трпеливост и смиреност под притисок, што е корисно за сите возрасти.
+            </p>
+        </div>
+
+
+        <div class="experience_container">
+
+            <!-- 1 -->
+            <!-- 2 -->
+            <div class="exp_card" onclick="openLightbox('europe.jpg')">
+                <img src="europe.jpg">
+                <h3>Европско првенство</h3>
+                <p>
+                    Во 2024 година учествував на Европското првенство во карате кое се одржа во Задар, Хрватска.
+                    Настапив во дисциплината кумите (борби) во категорија кадети -70 кг, при што го освоив 5. место.
+
+
+                </p>
+            </div>
+
+            <!-- 3 -->
+            <div class="exp_card" onclick="openLightbox('balkan.jpg')">
+                <img src="balkan.jpg">
+                <h3>Балканско првенство</h3>
+                <p>
+                    Во 2023 година учествував на Балканското карате првенство за кадети, јуниори и U21, одржано од 17–19 ноември
+                    во Љубљана, Словенија. Настапив во кумите (борби) во категорија кадети -65 кг, при што го освоив 4. место.
+
+                </p>
+            </div>
+
+            <!-- 4 -->
+            <div class="exp_card" onclick="openLightbox('belt.jpg')">
+                <img src="belt.jpg">
+                <h3>Полагање појас</h3>
+                <p>
+                    Карате појасите (обои) го претставуваат степенот на вештина и искуство на практикантот. Напредувањето се одвива постепено,
+                    од бел до црн појас (бел, жолт, црвен, зелен, плав, кафеав и црн), како и низ повисоките нивоа „дан“.
+                    До мојата 14-годишна возраст достигнав кафеав појас, а на 18 години е минималната возраст за полагање за црн појас. 
+                    Активно работам на усовршување на вештините со цел полагање за црн појас.
+                </p>
+            </div>
+
+
+            <div class="exp_card" onclick="openLightbox('national.jpg')">
+                <img src="national.jpg">
+                <h3>Државно првенство</h3>
+                <p>
+                    На државните карате првенства во Македонија двапати по ред бев државен првак. Тоа ми овозможи можност за учество
+                    на балкански и европски првенства.
+                </p>
+            </div>
+
+            <div class="exp_card" onclick="openLightbox('tournament.jpg')">
+                <img src="tournament.jpg">
+                <h3>Карате турнири</h3>
+                <p>
+                    Имам учествувано на бројни домашни и меѓународни турнири, каде имам постигнато значајни резултати.
+                </p>
+            </div>
+
+            <div class="exp_card" onclick="openLightbox('coach.jpg')">
+                <img src="coach.jpg">
+                <h3>Најдобар тренер</h3>
+                <p>
+                    Како млад тренер, можам да кажам дека моите ученици постигнуваат значајни успеси на домашни и меѓународни турнири.
+                </p>
+            </div>
+
+        </div>
+
+
+
+
+
+
+    </div>
+
+    <div id="galerija" class="tab_content" style="color:white">
+
+        <h1 class="gallery_title">Галерија</h1>
+        <p class="gallery_text">
+            Ова се моменти од моето карате патување заедно со мојот клуб. Слики од натпревари, тренинзи и настани каде што сме стекнале искуство, пријателства и успеси.
+        </p>
+
+        <div class="art_frame">
+
+            <img src="g1.jpg" onclick="openLightbox(this.src)">
+            <img src="g2.jpg" onclick="openLightbox(this.src)">
+            <img src="g3.jpg" onclick="openLightbox(this.src)">
+            <img src="g4.jpg" onclick="openLightbox(this.src)">
+            <img src="g5.jpg" onclick="openLightbox(this.src)">
+            <img src="g6.jpg" onclick="openLightbox(this.src)">
+            <img src="g7.jpg" onclick="openLightbox(this.src)">
+            <img src="g8.jpg" onclick="openLightbox(this.src)">
+            <img src="g9.jpg" onclick="openLightbox(this.src)">
+            <img src="g10.jpg" onclick="openLightbox(this.src)">
+            <img src="g11.jpg" onclick="openLightbox(this.src)">
+            <img src="g12.jpg" onclick="openLightbox(this.src)">
+
+        </div>
+
+    </div>
+
+
+
+
+    <div id="raspored1" class="tab_content" style="color:white">
+        <div class="contact_container">
+
+            <!-- ЛЕВО: МАПА -->
+            <div class="contact_left">
+                <iframe src="https://www.google.com/maps?q=Sport+Hall+Jordan+Mijalkov+Stip&output=embed"
+                        loading="lazy">
+                </iframe>
+            </div>
+
+            <!-- ДЕСНО: ИНФО + ФОРМА -->
+            <div class="contact_right">
+
+                <h2>Контактирај ме</h2>
+
+                <p><b>Телефон:</b> 072 611 869</p>
+                <p><b>Email:</b> davidstojkov341@gmail.com</p>
+                <p><b>Локација:</b> Штип, Македонија</p>
+
+                <div class="socials">
+                    <a href="https://www.facebook.com/profile.php?id=61580486207090" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/stojkow_d/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+
+                <form class="contact_form">
+                    <input type="text" placeholder="Име" required>
+                    <input type="email" placeholder="Email" required>
+                    <input type="text" placeholder="Наслов">
+                    <textarea placeholder="Порака"></textarea>
+
+                    <button type="submit">Испрати</button>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox_img">
+    </div>
+
+
+
+
+
+</body>
+</html>
